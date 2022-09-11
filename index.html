@@ -160,6 +160,108 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Mayyy">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mayyy的自留地">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">计算机体系结构</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-09 12:13:14" itemprop="dateCreated datePublished" datetime="2022-09-09T12:13:14+08:00">2022-09-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-11 10:59:20" itemprop="dateModified" datetime="2022-09-11T10:59:20+08:00">2022-09-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="一、指令系統"><a href="#一、指令系統" class="headerlink" title="一、指令系統"></a>一、指令系統</h1><p>指令系统可进一步分为复杂指令系统(CISC)，精简指令系统(RISC)，和超长指令字(VLIW)</p>
+<h2 id="1、CISC"><a href="#1、CISC" class="headerlink" title="1、CISC"></a>1、CISC</h2><p>早期的CPU大多采用CISC指令系统，但存在所谓的二八问题（即80的使用频率的指令只占到了20)</p>
+<h2 id="2、RISC"><a href="#2、RISC" class="headerlink" title="2、RISC"></a>2、RISC</h2><p>RISC根绝CISC，简化了指令编码，简化了访存类型。本质特征通过load&#x2F;store指令简化了指令的结构关系，所有运算指令都是对寄存器运算。</p>
+<p><img src="https://s2.loli.net/2022/09/09/5uGiMxIrCD71s3Y.png" alt="image.png"></p>
+<h1 id="二、存储器管理"><a href="#二、存储器管理" class="headerlink" title="二、存储器管理"></a>二、存储器管理</h1><h2 id="1、连续地址"><a href="#1、连续地址" class="headerlink" title="1、连续地址"></a>1、连续地址</h2><h2 id="2、段式存储"><a href="#2、段式存储" class="headerlink" title="2、段式存储"></a>2、段式存储</h2><p><img src="https://s2.loli.net/2022/09/09/N4dPRI7EWLSjT56.png" alt="image.png"><br>需要注意的是，段表内包含每个段的长度，如果超出此长度，将会抛出越界异常</p>
+<h2 id="3、页式存储"><a href="#3、页式存储" class="headerlink" title="3、页式存储"></a>3、页式存储</h2><p><img src="https://s2.loli.net/2022/09/09/Cm2DxvMQLladHKi.png" alt="image.png"></p>
+<h2 id="4、段页式存储"><a href="#4、段页式存储" class="headerlink" title="4、段页式存储"></a>4、段页式存储</h2><p><img src="https://s2.loli.net/2022/09/09/zSuMQwBoqYh1EVF.png" alt="image.png"><br>由段号得到页表的起始地址，再根据虚拟页号查询页表得到物理页号，与页内偏移组合得到最终的物理地址。</p>
+<h1 id="三、运行级别"><a href="#三、运行级别" class="headerlink" title="三、运行级别"></a>三、运行级别</h1><p>运行级别经历了无管理，增加保护模式，增加调试模式，增加虚拟化支持等阶段。</p>
+<h2 id="1、保护模式"><a href="#1、保护模式" class="headerlink" title="1、保护模式"></a>1、保护模式</h2><p>现代Linux系统增加了保护模式，包含用户态和核心态。<br>在用户态下，用户只能访问受限的内存空间，不允许访问外围设备，当需要使用外围设备时候，通过系统调用发出申请，在内核态下完成。</p>
+<h2 id="2、调试模式"><a href="#2、调试模式" class="headerlink" title="2、调试模式"></a>2、调试模式</h2><p>在调试模式下，处理器所执行的程序获得最高的权限，不过此时处理器所执行的指令是从外部的调试接口获得。</p>
+<h2 id="3、虚拟化支持"><a href="#3、虚拟化支持" class="headerlink" title="3、虚拟化支持"></a>3、虚拟化支持</h2><hr>
+<h1 id="四、指令系统的组成"><a href="#四、指令系统的组成" class="headerlink" title="四、指令系统的组成"></a>四、指令系统的组成</h1><p>指令系统由若干条指令及操作对象组成，即操作码和操作数，操作码指定功能，操作数指示对象。</p>
+<h2 id="1、地址空间"><a href="#1、地址空间" class="headerlink" title="1、地址空间"></a>1、地址空间</h2><p>处理器所能够访问的地址空间包括寄存器空间和系统内存空间。</p>
+<ul>
+<li>寄存器空间包括通用寄存器、专用寄存器、控制寄存器。通过寄存器号来寻址。<br><img src="https://s2.loli.net/2022/09/09/ek5qV6GusHyOaJ3.png" alt="image.png"> </li>
+<li>系统内从空间包括IO空间和内存空间。内存空间访问使用一般的访问指令，IO空间使用专门的IN&#x2F;OUT指令。</li>
+</ul>
+<h2 id="2、指令系统的分类"><a href="#2、指令系统的分类" class="headerlink" title="2、指令系统的分类"></a>2、指令系统的分类</h2><p>指令系统可分为堆栈型、累加型、和寄存器型。<br><img src="https://s2.loli.net/2022/09/09/ZXr2z35o9ATxWjS.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2022/09/09/MsFnruVby2maiW8.png" alt="image.png"></p>
+<h2 id="3、操作数"><a href="#3、操作数" class="headerlink" title="3、操作数"></a>3、操作数</h2><ul>
+<li>大端小端模式</li>
+<li>大端：高数据位存低地址</li>
+<li>小端：高数据位存高地址</li>
+</ul>
+<h2 id="4、寻址"><a href="#4、寻址" class="headerlink" title="4、寻址"></a>4、寻址</h2><p><img src="https://s2.loli.net/2022/09/09/6RKjVkOZvaTie7b.png" alt="image.png"></p>
+<h2 id="5、指令的功能"><a href="#5、指令的功能" class="headerlink" title="5、指令的功能"></a>5、指令的功能</h2><p>从功能上来看，指令可以分为四大类</p>
+<ul>
+<li>运算指令</li>
+<li>访存指令</li>
+<li>转移指令<ul>
+<li>条件转移</li>
+<li>无条件转移</li>
+<li>过程调用</li>
+<li>过程返回</li>
+</ul>
+</li>
+<li>特殊指令<br>其中，转移指令中相对转移是程序计数器(PC)加上一个偏移量作为目标地址，绝对转移则直接给出转移目标地址</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/26/OS-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -672,7 +774,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
